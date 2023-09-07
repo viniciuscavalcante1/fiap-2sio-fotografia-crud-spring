@@ -1,0 +1,29 @@
+package fotografia.bruna.api.membro;
+
+import fotografia.bruna.api.endereco.Endereco;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Table(name = "membros") // Anotação do JPA para definir o nome da tabela
+@Entity(name = "membro") // Anotação do JPA para definir o nome da entidade
+@Getter // Anotação do Lombok para gerar os getters
+@NoArgsConstructor // Anotação do Lombok para gerar o construtor padrão
+@AllArgsConstructor // Anotação do Lombok para gerar o construtor com todos os atributos
+@EqualsAndHashCode(of = "id") // Anotação do Lombok para gerar os métodos equals e hashCode
+public class Membro {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) // Anotação do JPA para definir a chave primária
+    private Long id;
+    private String nome;
+    private String email;
+    private String cpf;
+
+    @Enumerated(EnumType.STRING) // Anotação do JPA para definir o tipo de enumeração
+    private Cargo cargo;
+
+    @Embedded // Embeddable attribute da JPA, fica em uma classe separada e é "embutido" na classe atual.
+    private Endereco endereco;
+}
