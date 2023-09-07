@@ -26,4 +26,12 @@ public class Membro {
 
     @Embedded // Embeddable attribute da JPA, fica em uma classe separada e é "embutido" na classe atual.
     private Endereco endereco;
+
+    public Membro(DadosCadastroMembro dados) {
+        this.nome = dados.nome();
+        this.email = dados.email();
+        this.cpf = dados.cpf();
+        this.cargo = dados.cargo();
+        this.endereco = new Endereco(dados.endereco());
+    }
 }
