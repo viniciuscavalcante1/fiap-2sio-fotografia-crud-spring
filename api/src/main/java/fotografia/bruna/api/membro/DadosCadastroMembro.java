@@ -19,6 +19,10 @@ public record DadosCadastroMembro(
         @Email // Anotação do Bean Validation para validar se o campo é um e-mail válido.
         String email,
 
+        @NotBlank
+        @Pattern(regexp = "\\d{8,13}")
+        String telefone,
+
         @NotNull
         @NotBlank
         @Pattern(regexp = "\\d{10,11}") // Anotação do Bean Validation para validar se o campo é um CPF válido.

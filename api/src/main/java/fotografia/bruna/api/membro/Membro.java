@@ -19,6 +19,7 @@ public class Membro {
     private Long id;
     private String nome;
     private String email;
+    private String telefone;
     private String cpf;
 
     @Enumerated(EnumType.STRING) // Anotação do JPA para definir o tipo de enumeração
@@ -30,6 +31,7 @@ public class Membro {
     public Membro(DadosCadastroMembro dados) {
         this.nome = dados.nome();
         this.email = dados.email();
+        this.telefone = dados.telefone();
         this.cpf = dados.cpf();
         this.cargo = dados.cargo();
         this.endereco = new Endereco(dados.endereco());

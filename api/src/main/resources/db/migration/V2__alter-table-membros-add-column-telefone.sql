@@ -1,0 +1,1 @@
+ALTER TABLE membros ADD telefone VARCHAR(13) NOT NULL;
