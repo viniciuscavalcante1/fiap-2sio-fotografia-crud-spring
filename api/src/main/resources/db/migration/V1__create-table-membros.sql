@@ -1,0 +1,15 @@
+CREATE TABLE membros(
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    cpf VARCHAR(11) NOT NULL UNIQUE,
+    cargo VARCHAR(255) NOT NULL,
+    logradouro VARCHAR(255) NOT NULL,
+    bairro VARCHAR(255) NOT NULL,
+    cep VARCHAR(8) NOT NULL,
+    complemento VARCHAR(255) NOT NULL,
+    numero VARCHAR(255) NOT NULL,
+    cidade VARCHAR(255) NOT NULL,
+    uf VARCHAR(2) NOT NULL,
+    PRIMARY KEY (id)
+);
