@@ -1,9 +1,6 @@
 package fotografia.bruna.api.controller;
 
-import fotografia.bruna.api.cliente.DadosListagemCliente;
-import fotografia.bruna.api.cliente.Cliente;
-import fotografia.bruna.api.cliente.ClienteRepository;
-import fotografia.bruna.api.cliente.DadosCadastroCliente;
+import fotografia.bruna.api.cliente.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -30,4 +27,16 @@ public class ClienteController {
         return repository.findAll(paginacao).map(DadosListagemCliente::new);
     }
 
+    @PutMapping
+    @Transactional
+    public void atualizarCliente(@RequestBody @Valid DadosAtualizacaoCliente dados) {
+        var cliente = repository.getReferenceById(dados.id());
+        cliente.atualizarInformacoes(dados);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirCliente(@PathVariable Long id) {
+        repository.deleteById(id);
+    }
 }
