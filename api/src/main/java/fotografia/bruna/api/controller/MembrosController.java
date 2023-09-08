@@ -1,9 +1,6 @@
 package fotografia.bruna.api.controller;
 
-import fotografia.bruna.api.membro.DadosCadastroMembro;
-import fotografia.bruna.api.membro.DadosListagemMembro;
-import fotografia.bruna.api.membro.Membro;
-import fotografia.bruna.api.membro.MembroRepository;
+import fotografia.bruna.api.membro.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -32,5 +29,12 @@ public class MembrosController {
     // também é possível usar o parâmetro ?sort=nome,asc para ordenar por nome em ordem crescente
     public Page<DadosListagemMembro> listarMembros(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListagemMembro::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizarMembro(@RequestBody @Valid DadosAtualizacaoMembro dados) {
+        var membro = repository.getReferenceById(dados.id());
+        membro.atualizarInformacoes(dados);
     }
 }

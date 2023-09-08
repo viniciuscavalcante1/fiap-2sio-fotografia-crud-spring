@@ -36,4 +36,16 @@ public class Membro {
         this.cargo = dados.cargo();
         this.endereco = new Endereco(dados.endereco());
     }
+
+    public void atualizarInformacoes(DadosAtualizacaoMembro dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+        if (dados.telefone() != null) {
+            this.email = dados.telefone();
+        }
+        if (dados.endereco() != null) {
+            this.endereco.atualizarInformacoes(dados.endereco());
+        }
+    }
 }
