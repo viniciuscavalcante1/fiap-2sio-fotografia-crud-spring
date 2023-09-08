@@ -1,11 +1,13 @@
 package fotografia.bruna.api.controller;
 
 import fotografia.bruna.api.cliente.*;
+import fotografia.bruna.api.membro.DadosDetalhesMembro;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,5 +40,11 @@ public class ClienteController {
     @Transactional
     public void excluirCliente(@PathVariable Long id) {
         repository.deleteById(id);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity detalharCliente(@PathVariable Long id) {
+        var cliente = repository.getReferenceById(id);
+        return ResponseEntity.ok(new DadosDetalhesCliente(cliente));
     }
 }
