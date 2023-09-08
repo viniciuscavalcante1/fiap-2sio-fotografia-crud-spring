@@ -1,15 +1,15 @@
 package fotografia.bruna.api.controller;
 
 import fotografia.bruna.api.membro.DadosCadastroMembro;
+import fotografia.bruna.api.membro.DadosListagemMembro;
 import fotografia.bruna.api.membro.Membro;
 import fotografia.bruna.api.membro.MembroRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/membros")
@@ -25,4 +25,8 @@ public class MembrosController {
         repository.save(new Membro(dados)); // Salva o membro no banco de dados
     }
 
+    @GetMapping
+    public List<DadosListagemMembro> listarMembros() {
+        return repository.findAll().stream().map(DadosListagemMembro::new).toList();
+    }
 }
