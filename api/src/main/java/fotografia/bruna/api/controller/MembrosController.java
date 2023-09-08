@@ -37,4 +37,10 @@ public class MembrosController {
         var membro = repository.getReferenceById(dados.id());
         membro.atualizarInformacoes(dados);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirMembro(@PathVariable Long id) {
+        repository.deleteById(id);
+    }
 }
