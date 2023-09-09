@@ -1,4 +1,4 @@
-package fotografia.bruna.api.infra;
+package fotografia.bruna.api.infra.exceptions;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
