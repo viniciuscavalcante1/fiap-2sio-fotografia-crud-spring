@@ -1,4 +1,4 @@
-package fotografia.bruna.api.membro;
+package fotografia.bruna.api.domain.membro;
 
 public enum Cargo {
     FOTOGRAFA,

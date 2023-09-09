@@ -1,7 +1,6 @@
 package fotografia.bruna.api.controller;
 
-import fotografia.bruna.api.cliente.*;
-import fotografia.bruna.api.membro.DadosDetalhesMembro;
+import fotografia.bruna.api.domain.cliente.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

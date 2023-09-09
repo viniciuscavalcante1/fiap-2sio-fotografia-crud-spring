@@ -1,6 +1,6 @@
-package fotografia.bruna.api.membro;
+package fotografia.bruna.api.domain.membro;
 
-import fotografia.bruna.api.endereco.Endereco;
+import fotografia.bruna.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

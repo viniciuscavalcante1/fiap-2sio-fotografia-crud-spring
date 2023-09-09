@@ -1,4 +1,4 @@
-package fotografia.bruna.api.endereco;
+package fotografia.bruna.api.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

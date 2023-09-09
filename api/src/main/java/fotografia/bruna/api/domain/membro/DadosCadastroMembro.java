@@ -1,6 +1,6 @@
-package fotografia.bruna.api.membro;
+package fotografia.bruna.api.domain.membro;
 
-import fotografia.bruna.api.endereco.DadosEndereco;
+import fotografia.bruna.api.domain.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

@@ -1,4 +1,4 @@
-package fotografia.bruna.api.cliente;
+package fotografia.bruna.api.domain.cliente;
 
 public record DadosAtualizacaoCliente(
         Long id,

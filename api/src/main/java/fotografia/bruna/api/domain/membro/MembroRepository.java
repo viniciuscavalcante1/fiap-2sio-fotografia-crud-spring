@@ -1,4 +1,4 @@
-package fotografia.bruna.api.membro;
+package fotografia.bruna.api.domain.membro;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

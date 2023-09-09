@@ -1,4 +1,4 @@
-package fotografia.bruna.api.cliente;
+package fotografia.bruna.api.domain.cliente;
 
 public record DadosListagemCliente(Long id, String nome, String email, String cpf, String telefone) {
     public DadosListagemCliente(Cliente cliente) {
