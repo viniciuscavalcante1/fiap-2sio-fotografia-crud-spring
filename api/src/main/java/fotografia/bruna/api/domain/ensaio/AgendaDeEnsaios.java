@@ -17,7 +17,7 @@ public class AgendaDeEnsaios {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public void agendar(DadosAgendamentoEnsaio dados) {
+    public DadosAgendamentoEnsaio agendar(DadosAgendamentoEnsaio dados) {
         if (!membroRepository.existsById(dados.idMembro()))
             throw new IllegalArgumentException("Membro não encontrado");
 
@@ -27,7 +27,9 @@ public class AgendaDeEnsaios {
 
         var membro = membroRepository.findById(dados.idMembro()).get();
         var cliente = clienteRepository.findById(dados.idCliente()).get();
-        var consulta = new Ensaio(null, membro, cliente, dados.data());
-        ensaioRepository.save(consulta);
+        var ensaio = new Ensaio(null, membro, cliente, dados.data());
+        ensaioRepository.save(ensaio);
+
+        return new DadosAgendamentoEnsaio(ensaio);
     }
 }

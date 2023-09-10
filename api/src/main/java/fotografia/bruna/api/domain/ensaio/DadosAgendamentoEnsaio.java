@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 public record DadosAgendamentoEnsaio(
+        Long id,
         Long idMembro,
 
         @NotNull
@@ -15,5 +16,8 @@ public record DadosAgendamentoEnsaio(
         @Future
         LocalDateTime data) {
 
-        }
+    public DadosAgendamentoEnsaio(Ensaio ensaio) {
+        this(ensaio.getId(), ensaio.getMembro().getId(), ensaio.getCliente().getId(), ensaio.getData());
+    }
+}
 
