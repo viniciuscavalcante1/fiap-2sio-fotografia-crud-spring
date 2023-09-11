@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Confirmar Exclusão de Membro</title>
+</head>
+<body>
+<h1>Confirmar Exclusão de Membro</h1>
+<p>Tem certeza de que deseja excluir o membro abaixo?</p>
+<table>
+  <tr>
+    <th>ID:</th>
+    <td th:text="${membro.id}"></td>
+  </tr>
+  <tr>
+    <th>Nome:</th>
+    <td th:text="${membro.nome}"></td>
+  </tr>
+  <tr>
+    <th>Telefone:</th>
+    <td th:text="${membro.telefone}"></td>
+  </tr>
+</table>
+<form th:action="@{/membros/{id}/excluir(id=${membro.id})}" method="POST">
+  <button type="submit">Confirmar Exclusão</button>
+</form>
+<a href="/membros">Cancelar</a>
+</body>
+</html>

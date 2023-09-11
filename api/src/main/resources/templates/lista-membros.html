@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Membros</title>
+</head>
+<body>
+<h1>Lista de Membros</h1>
+<a href="/membros/cadastrar" class="btn btn-primary">Cadastrar Novo Membro</a>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Cargo</th>
+    <!-- Coluna adicional para links -->
+    <th>Detalhes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Use Thymeleaf para iterar e exibir os membros -->
+  <tr th:each="membro : ${membros}">
+    <td th:text="${membro.id}"></td>
+    <td th:text="${membro.nome}"></td>
+    <td th:text="${membro.email}"></td>
+    <td th:text="${membro.cargo}"></td>
+    <!-- Coluna com link para detalhes do membro -->
+    <td>
+      <a th:href="@{/membros/{id}(id=${membro.id})}" class="btn btn-info">Detalhes</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
