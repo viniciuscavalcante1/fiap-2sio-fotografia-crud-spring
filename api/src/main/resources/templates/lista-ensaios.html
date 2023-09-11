@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Ensaios</title>
+</head>
+<body>
+<h1>Lista de Ensaios</h1>
+<a href="/ensaios/agendar" class="btn btn-primary">Agendar Novo Ensaio</a>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Membro</th>
+    <th>Cliente</th>
+    <th>Data</th>
+    <!-- Outras colunas, se aplicável -->
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Use Thymeleaf para iterar e exibir os ensaios -->
+  <tr th:each="ensaio : ${ensaios}">
+    <td th:text="${ensaio.id}"></td>
+    <td th:text="${ensaio.nomeMembro}"></td>
+    <td th:text="${ensaio.nomeCliente}"></td>
+    <td th:text="${ensaio.data}"></td>
+    <!-- Outras colunas, se aplicável -->
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
