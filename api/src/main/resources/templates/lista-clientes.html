@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Clientes</title>
+</head>
+<body>
+<h1>Lista de Clientes</h1>
+<a href="/clientes/cadastrar" class="btn btn-primary">Cadastrar Novo Cliente</a>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <!-- Outras colunas, se aplicável -->
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Use Thymeleaf para iterar e exibir os clientes -->
+  <tr th:each="cliente : ${clientes}">
+    <td th:text="${cliente.id}"></td>
+    <td th:text="${cliente.nome}"></td>
+    <!-- Outras colunas, se aplicável -->
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
