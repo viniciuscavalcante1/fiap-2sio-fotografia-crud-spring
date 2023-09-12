@@ -34,7 +34,6 @@ public class AgendaDeEnsaios {
         var ensaio = new Ensaio(null, membro, cliente, dados.data());
         ensaioRepository.save(ensaio);
 
-        // Crie um novo objeto DadosAgendamentoEnsaio com as informações do ensaio agendado
         DadosAgendamentoEnsaio novoAgendamento = new DadosAgendamentoEnsaio(ensaio.getId(), ensaio.getMembro().getId(), ensaio.getCliente().getId(), ensaio.getData());
 
         return novoAgendamento;
@@ -42,14 +41,10 @@ public class AgendaDeEnsaios {
 
 
     public List<Ensaio> listarEnsaios() {
-        // Aqui você pode adicionar a lógica para buscar e retornar a lista de ensaios.
-        // Por exemplo, você pode chamar ensaioRepository.findAll() para buscar todos os ensaios.
         return ensaioRepository.findAll();
     }
 
     public Optional<Ensaio> detalharEnsaio(Long ensaioId) {
-        // Aqui você pode adicionar a lógica para buscar os detalhes do ensaio com base no ID.
-        // Por exemplo, você pode chamar ensaioRepository.findById(ensaioId) para buscar o ensaio pelo ID.
         return ensaioRepository.findById(ensaioId);
     }
 
