@@ -4,6 +4,15 @@
   <title>Cadastro de Cliente</title>
 </head>
 <body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="/clientes">Clientes</a></li>
+      <li><a href="/membros">Membros</a></li>
+      <li><a href="/ensaios">Ensaios</a></li>
+    </ul>
+  </nav>
+</header>
 <h1>Cadastro de Cliente</h1>
 <form method="POST" action="#" th:action="@{/clientes/cadastrar}" th:object="${cliente}" >
   <label for="nome">Nome:</label>
