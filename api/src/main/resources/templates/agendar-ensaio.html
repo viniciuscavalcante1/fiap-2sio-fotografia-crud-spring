@@ -20,7 +20,6 @@
 
 <!-- Formulário de Agendamento de Ensaio -->
 <form th:action="@{/ensaios/agendar}" th:object="${dadosAgendamentoEnsaio}" method="post">
-  <!-- Campo ID do Membro -->
   <div>
     <label for="idMembro">Selecione o Membro:</label>
     <select id="idMembro" name="idMembro" th:field="*{idMembro}" required>
@@ -28,7 +27,6 @@
     </select>
   </div>
 
-  <!-- Campo ID do Cliente -->
   <div>
     <label for="idCliente">Selecione o Cliente:</label>
     <select id="idCliente" name="idCliente" th:field="*{idCliente}" required>
@@ -36,17 +34,14 @@
     </select>
   </div>
 
-  <!-- Campo Data do Ensaio -->
   <div>
     <label for="data">Data do Ensaio:</label>
     <input type="datetime-local" id="data" name="data" th:field="*{data}" required>
   </div>
 
-  <!-- Botão de Envio -->
   <button type="submit">Agendar Ensaio</button>
 </form>
 
-<!-- Link para voltar -->
 <a href="/ensaios" class="btn btn-primary">Voltar para a Lista de Ensaios</a>
 </body>
 </html>
