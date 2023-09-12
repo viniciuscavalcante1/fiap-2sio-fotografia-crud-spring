@@ -1,4 +1,3 @@
-/* Definindo a fonte Open Sans para todo o corpo do documento */
 * {
     margin: 10px;
 }
@@ -6,12 +5,11 @@
 body {
     font-family: 'Open Sans', sans-serif;
     margin-left: 200px;
-    margin-right: 200px;/* Aumentei a margem para 20px */
+    margin-right: 200px;
 }
 
-/* Restante do seu CSS permanece o mesmo */
 
-/* Remover bullets da lista não ordenada */
+/* Remover bullets da lista */
 .header ul {
     list-style-type: none;
     padding: 0;
@@ -26,17 +24,15 @@ body {
     text-align: center;
 }
 
-/* Estilo para os links no header */
 .header a {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
 }
 
-/* Listar links horizontalmente no header */
 .header ul li {
     display: inline-block;
-    margin-right: 10px; /* Espaço entre os links */
+    margin-right: 10px; 
 }
 
 /* Estilo para os botões */
@@ -47,7 +43,7 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 4px;
-    margin-bottom: 10px; /* Adicionei margem para afastar os botões */
+    margin-bottom: 10px; 
 }
 
 .btn-primary {
@@ -76,7 +72,6 @@ th {
     background-color: #f2f2f2;
 }
 
-/* Estilo para os detalhes */
 .details {
     margin-top: 20px;
 }
@@ -85,16 +80,14 @@ th {
 form {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px; /* Adicionei padding para afastar os elementos internos */
+    padding: 20px; 
 }
 
-/* Estilo para os labels dos formulários */
 form label {
     display: block;
     margin-bottom: 5px;
 }
 
-/* Estilo para os inputs dos formulários */
 form input {
     width: 100%;
     padding: 8px;
@@ -103,7 +96,6 @@ form input {
     border-radius: 4px;
 }
 
-/* Estilo para os botões dos formulários */
 form button {
     background-color: #007bff;
     color: #fff;
@@ -114,7 +106,6 @@ form button {
     cursor: pointer;
 }
 
-/* Estilo para os links de navegação */
 .nav-link {
     color: #007bff;
     text-decoration: none;
