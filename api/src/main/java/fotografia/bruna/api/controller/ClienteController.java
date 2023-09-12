@@ -46,7 +46,7 @@ public class ClienteController {
         System.out.println("Nome: " + cliente.nome());
         repository.save(new Cliente(cliente));
         model.addAttribute("cliente", cliente);
-        return "redirect:/clientes"; // Nome do template HTML para o formulário de cadastro
+        return "redirect:/clientes"; 
     }
 
     @GetMapping("/{id}/editar")
@@ -55,7 +55,7 @@ public class ClienteController {
 
         DadosAtualizacaoCliente dados = new DadosAtualizacaoCliente(cliente.getId(), cliente.getNome(), cliente.getEmail(), cliente.getCpf(), cliente.getTelefone());
         model.addAttribute("cliente", dados);
-        return "editar-cliente"; // Nome do template HTML para o formulário de edição
+        return "editar-cliente"; 
     }
 
     @PostMapping("/{id}/editar")
@@ -65,15 +65,14 @@ public class ClienteController {
 
         cliente.atualizarInformacoes(new DadosAtualizacaoCliente(id, dados.nome(), dados.email(), dados.cpf(), dados.telefone()));
         repository.save(cliente);
-        return "redirect:/clientes/" + id; // Nome do template HTML para a página de detalhes do cliente
+        return "redirect:/clientes/" + id; 
     }
 
     @GetMapping("/{id}/excluir")
     public String confirmarExclusao(@PathVariable Long id, Model model) {
-        // Aqui você pode buscar os dados do cliente por ID para exibir na página de confirmação
         var cliente = repository.getReferenceById(id);
         model.addAttribute("cliente", cliente);
-        return "confirmar-exclusao"; // Nome do template HTML para a página de confirmação de exclusão
+        return "confirmar-exclusao"; 
     }
 
     @PostMapping("/{id}/excluir")
