@@ -29,7 +29,7 @@ public class MembrosController {
     public String listarMembro(Model model) {
         List<DadosListagemMembro> membros = repository.findAll().stream().map(DadosListagemMembro::new).collect(Collectors.toList());
         model.addAttribute("membros", membros);
-        return "lista-membros"; // Nome do template HTML para a lista de membros
+        return "lista-membros"; 
     }
 
     @GetMapping("/{id}")
@@ -37,14 +37,14 @@ public class MembrosController {
         var membro = repository.getReferenceById(id);
         DadosDetalhesMembro dados = new DadosDetalhesMembro(membro);
         model.addAttribute("membro", dados);
-        return "detalhes-membro"; // Nome do template HTML para os detalhes do membro
+        return "detalhes-membro"; 
     }
 
     @GetMapping("/cadastrar")
     // O cargo é um ENUM e só pode ser um dos valores definidos na classe Cargo: FOTOGRAFA, EDITORA, ASSISTENTE
     public String viewCadastrarMembro(Model model) {
         System.out.println("Exibindo formulário de cadastro de membro");
-        model.addAttribute("membro", new DadosCadastroMembro("", "", "", "", null, new DadosEndereco("", "", "", "", "", "", ""))); // Substitua os campos vazios pelos campos desejados
+        model.addAttribute("membro", new DadosCadastroMembro("", "", "", "", null, new DadosEndereco("", "", "", "", "", "", ""))); 
         return "cadastro-membro";
     }
 
@@ -54,7 +54,7 @@ public class MembrosController {
         System.out.println("Nome: " + membro.nome());
         repository.save(new Membro(membro));
         model.addAttribute("membro", membro);
-        return "redirect:/membros"; // Nome do template HTML para o formulário de cadastro
+        return "redirect:/membros"; 
     }
 
     @GetMapping("/{id}/editar")
@@ -62,7 +62,7 @@ public class MembrosController {
         var membro = repository.getReferenceById(id);
         DadosAtualizacaoMembro dados = new DadosAtualizacaoMembro(membro.getId(), membro.getNome(), membro.getTelefone());
         model.addAttribute("membro", dados);
-        return "editar-membro"; // Nome do template HTML para o formulário de edição
+        return "editar-membro"; 
     }
 
     @PostMapping("/{id}/editar")
@@ -72,7 +72,7 @@ public class MembrosController {
 
         membro.atualizarInformacoes(new DadosAtualizacaoMembro(id, dados.nome(), dados.telefone()));
         repository.save(membro);
-        return "redirect:/membros/" + id; // Nome do template HTML para a página de detalhes do membro
+        return "redirect:/membros/" + id; 
     }
 
     @GetMapping("/{id}/excluir")
@@ -80,7 +80,7 @@ public class MembrosController {
         // Aqui você pode buscar os dados do membro por ID para exibir na página de confirmação
         var membro = repository.getReferenceById(id);
         model.addAttribute("membro", membro);
-        return "confirmar-exclusao-membro"; // Nome do template HTML para a página de confirmação de exclusão
+        return "confirmar-exclusao-membro"; 
     }
 
     @PostMapping("/{id}/excluir")
