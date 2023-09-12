@@ -1,7 +1,7 @@
 # fiap-2sio-fotografia-crud-spring
 Projeto desenvolvido ao longo do segundo ano de Sistemas de Informação na FIAP em 2023.
 
-Para executar o projeto, é preciso ter instalado no computador o [Java](https://www.oracle.com/java/technologies/downloads/), alguma [IDE](https://www.jetbrains.com/idea/download/?section=windows) que consiga executar códigos em Java e também o banco de dados [MySQL](https://dev.mysql.com/downloads/installer/). 
+Para executar o projeto, é preciso ter instalado no computador o [Java](https://www.oracle.com/java/technologies/downloads/), alguma [IDE](https://www.jetbrains.com/idea/download/?section=windows) que consiga executar códigos em Java e também o banco de dados [MySQL](https://dev.mysql.com/downloads/installer/), da Oracle.
 
 Assim que tiver tudo instalado, você pode tanto realizar o download do projeto aqui pelo GitHub clicando em Code > Download ZIP ou [clonar](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository) o repositório, com o seguinte comando no terminal, caso também tenha o [Git](https://git-scm.com/downloads) instalado em seu computador:
 
