@@ -25,19 +25,16 @@
     <th>Email</th>
     <th>CPF</th>
     <th>Telefone</th>
-    <!-- Coluna adicional para links -->
     <th>Detalhes</th>
   </tr>
   </thead>
   <tbody>
-  <!-- Use Thymeleaf para iterar e exibir os clientes -->
   <tr th:each="cliente : ${clientes}">
     <td th:text="${cliente.id}"></td>
     <td th:text="${cliente.nome}"></td>
     <td th:text="${cliente.email}"></td>
     <td th:text="${cliente.cpf}"></td>
     <td th:text="${cliente.telefone}"></td>
-    <!-- Coluna com link para detalhes do cliente -->
     <td>
       <a th:href="@{/clientes/{id}(id=${cliente.id})}" class="btn btn-info">Detalhes</a>
     </td>
