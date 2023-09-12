@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <title>Agendamento de Ensaio</title>
+</head>
+<body>
+<header class="header">
+  <nav>
+    <ul>
+      <li><a href="/clientes">Clientes</a></li>
+      <li><a href="/membros">Membros</a></li>
+      <li><a href="/ensaios">Ensaios</a></li>
+    </ul>
+  </nav>
+</header>
+<h1>Agendamento de Ensaio</h1>
+
+<!-- Formulário de Agendamento de Ensaio -->
+<form th:action="@{/ensaios/agendar}" th:object="${dadosAgendamentoEnsaio}" method="post">
+  <!-- Campo ID do Membro -->
+  <div>
+    <label for="idMembro">Selecione o Membro:</label>
+    <select id="idMembro" name="idMembro" th:field="*{idMembro}" required>
+      <option th:each="membro : ${membros}" th:value="${membro.id}" th:text="${membro.nome}"></option>
+    </select>
+  </div>
+
+  <!-- Campo ID do Cliente -->
+  <div>
+    <label for="idCliente">Selecione o Cliente:</label>
+    <select id="idCliente" name="idCliente" th:field="*{idCliente}" required>
+      <option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="${cliente.nome}"></option>
+    </select>
+  </div>
+
+  <!-- Campo Data do Ensaio -->
+  <div>
+    <label for="data">Data do Ensaio:</label>
+    <input type="datetime-local" id="data" name="data" th:field="*{data}" required>
+  </div>
+
+  <!-- Botão de Envio -->
+  <button type="submit">Agendar Ensaio</button>
+</form>
+
+<!-- Link para voltar -->
+<a href="/ensaios" class="btn btn-primary">Voltar para a Lista de Ensaios</a>
+</body>
+</html>

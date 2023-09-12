@@ -1,23 +1,25 @@
 package fotografia.bruna.api.domain.ensaio;
 
-import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDateTime;
 
 public record DadosAgendamentoEnsaio(
-        Long id,
-        Long idMembro,
+        @JsonProperty("id") Long id,
+        @JsonProperty("idMembro") Long idMembro,
+        @JsonProperty("idCliente") Long idCliente,
+        @JsonProperty("data") LocalDateTime data) {
 
-        @NotNull
-        Long idCliente,
-
-        @NotNull
-        @Future
-        LocalDateTime data) {
-
-    public DadosAgendamentoEnsaio(Ensaio ensaio) {
-        this(ensaio.getId(), ensaio.getMembro().getId(), ensaio.getCliente().getId(), ensaio.getData());
+    @JsonCreator
+    public DadosAgendamentoEnsaio(
+            @JsonProperty("id") Long id,
+            @JsonProperty("idMembro") Long idMembro,
+            @JsonProperty("idCliente") Long idCliente,
+            @JsonProperty("data") LocalDateTime data) {
+        this.id = id;
+        this.idMembro = idMembro;
+        this.idCliente = idCliente;
+        this.data = data;
     }
 }
-

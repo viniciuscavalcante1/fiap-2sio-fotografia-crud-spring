@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Confirmar Exclusão</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+
+</head>
+<body>
+<header class="header">
+  <nav>
+    <ul>
+      <li><a href="/clientes">Clientes</a></li>
+      <li><a href="/membros">Membros</a></li>
+      <li><a href="/ensaios">Ensaios</a></li>
+    </ul>
+  </nav>
+</header>
+<h1>Confirmar Exclusão</h1>
+<p>Tem certeza de que deseja excluir o cliente com os seguintes detalhes?</p>
+<table>
+  <tr>
+    <th>ID:</th>
+    <td th:text="${cliente.id}"></td>
+  </tr>
+  <tr>
+    <th>Nome:</th>
+    <td th:text="${cliente.nome}"></td>
+  </tr>
+  <tr>
+    <th>Email:</th>
+    <td th:text="${cliente.email}"></td>
+  </tr>
+  <tr>
+    <th>Telefone:</th>
+    <td th:text="${cliente.telefone}"></td>
+  </tr>
+  <tr>
+    <th>CPF:</th>
+    <td th:text="${cliente.cpf}"></td>
+  </tr>
+</table>
+
+<!-- Formulário para confirmar a exclusão -->
+<form method="post" th:action="@{/clientes/{id}/excluir(id=${cliente.id})}">
+  <input type="submit" value="Confirmar Exclusão">
+</form>
+
+<a href="/clientes">Cancelar</a>
+</body>
+</html>
