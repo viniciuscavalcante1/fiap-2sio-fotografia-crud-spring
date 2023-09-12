@@ -16,7 +16,7 @@ Sugiro que realize a seguinte operação no banco:
 
 `INSERT INTO brunafotografia_api.usuarios VALUES ('vini@fotografia.com', '$2a$10$Y50UaMFOxteibQEYLrwuHeehHYfcoafCopUazP12.rqB41bsolF5.');`
 
-As tabelas do banco são criadas automaticamente pelas Migrations do Spring. A senha é '123456', criptografada.
+As tabelas do banco são criadas automaticamente pelas Migrations do Spring, assim que você fizer a build do projeto. A senha é '123456', criptografada.
 
 Com tudo isso, o projeto estará pronto para ser executado e testado.
 Obrigado!
