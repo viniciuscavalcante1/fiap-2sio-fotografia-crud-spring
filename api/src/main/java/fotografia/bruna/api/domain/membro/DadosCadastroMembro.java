@@ -34,4 +34,8 @@ public record DadosCadastroMembro(
         @NotNull
         @Valid // Anotação do Bean Validation para validar se o campo é válido de acordo com as anotações do DadosEndereco.
         DadosEndereco endereco) {
+
+        public static DadosCadastroMembro criarComEndereco(String nome, String email, String telefone, String cpf, Cargo cargo, DadosEndereco endereco) {
+                return new DadosCadastroMembro(nome, email, telefone, cpf, cargo, endereco);
+        }
 }
