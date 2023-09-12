@@ -34,14 +34,14 @@ public class EnsaioController {
     public String listarEnsaio(Model model) {
         List<DadosListagemEnsaio> ensaios = agenda.listarEnsaios().stream().map(DadosListagemEnsaio::new).collect(Collectors.toList());
         model.addAttribute("ensaios", ensaios);
-        return "lista-ensaios"; // Nome do template HTML para a lista de ensaios
+        return "lista-ensaios"; 
     }
 
     @GetMapping("/agendar")
     public String viewAgendarEnsaio(Model model) {
         System.out.println("Exibindo formulário de agendamento de ensaio");
 
-        // Crie um objeto DadosAgendamentoEnsaio vazio para preencher o formulário
+        // Cria um objeto DadosAgendamentoEnsaio vazio para preencher o formulário
         DadosAgendamentoEnsaio dadosAgendamento = new DadosAgendamentoEnsaio(null, null, null, null);
         List<Cliente> clientes = clienteRepository.findAll();
         List<Membro> membros = membroRepository.findAll();
@@ -49,8 +49,6 @@ public class EnsaioController {
         model.addAttribute("dadosAgendamentoEnsaio", dadosAgendamento);
         model.addAttribute("clientes", clientes);
         model.addAttribute("membros", membros);
-
-        // Você também pode adicionar outros dados ao modelo, se necessário.
 
         return "agendar-ensaio";
     }
@@ -69,7 +67,7 @@ public class EnsaioController {
         var ensaio = agenda.detalharEnsaio(id);
         DadosDetalhamentoEnsaio dados = new DadosDetalhamentoEnsaio(ensaio);
         model.addAttribute("ensaio", dados);
-        return "detalhes-ensaio"; // Nome do template HTML para os detalhes do ensaio
+        return "detalhes-ensaio"; 
     }
 
     @GetMapping("/{id}/editar")
@@ -77,7 +75,7 @@ public class EnsaioController {
         var ensaio = agenda.detalharEnsaio(id);
         DadosEdicaoEnsaio dados = new DadosEdicaoEnsaio(ensaio);
         model.addAttribute("ensaio", dados);
-        return "editar-ensaio"; // Nome do template HTML para o formulário de edição
+        return "editar-ensaio"; 
     }
 
     @PostMapping("/{id}/editar")
@@ -87,7 +85,7 @@ public class EnsaioController {
 
         ensaio.editarInformacoes(dados);
         agenda.salvarEnsaio(ensaio);
-        return "redirect:/ensaios/" + id; // Nome do template HTML para a página de detalhes do ensaio
+        return "redirect:/ensaios/" + id; 
     }
 
     @GetMapping("/{id}/excluir")
@@ -95,7 +93,7 @@ public class EnsaioController {
         // Aqui você pode buscar os dados do ensaio por ID para exibir na página de confirmação
         var ensaio = agenda.detalharEnsaio(id);
         model.addAttribute("ensaio", ensaio);
-        return "confirmar-exclusao-ensaio"; // Nome do template HTML para a página de confirmação de exclusão
+        return "confirmar-exclusao-ensaio"; 
     }
 
     @PostMapping("/{id}/excluir")
