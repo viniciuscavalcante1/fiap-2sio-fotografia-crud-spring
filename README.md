@@ -12,7 +12,7 @@ Após isso, você terá o projeto instalado em seu computador. Para garantir que
 Com todas as dependências instaladas, basta rodar o arquivo `ApiApplication`, dentro da pasta `api > src > main > java > ApiApplication.java`. 
 
 Para realizar o login, é necessário criar um usuário no banco de dados, na tabela `usuarios`. 
-Sugiro que realize a seguinte operação no banco:
+Sugiro que realize a seguinte operação no banco, pode ser pelo MySQL Workbench:
 
 `INSERT INTO brunafotografia_api.usuarios VALUES ('vini@fotografia.com', '$2a$10$Y50UaMFOxteibQEYLrwuHeehHYfcoafCopUazP12.rqB41bsolF5.');`
 
