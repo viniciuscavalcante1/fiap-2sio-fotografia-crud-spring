@@ -1,3 +1,23 @@
+/* Definindo a fonte Open Sans para todo o corpo do documento */
+* {
+    margin: 10px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 200px;
+    margin-right: 200px;/* Aumentei a margem para 20px */
+}
+
+/* Restante do seu CSS permanece o mesmo */
+
+/* Remover bullets da lista não ordenada */
+.header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 /* Estilo para o header */
 .header {
     background-color: #333;
@@ -13,6 +33,12 @@
     margin: 0 10px;
 }
 
+/* Listar links horizontalmente no header */
+.header ul li {
+    display: inline-block;
+    margin-right: 10px; /* Espaço entre os links */
+}
+
 /* Estilo para os botões */
 .btn {
     display: inline-block;
@@ -21,6 +47,7 @@
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    margin-bottom: 10px; /* Adicionei margem para afastar os botões */
 }
 
 .btn-primary {
@@ -58,6 +85,7 @@ th {
 form {
     max-width: 600px;
     margin: 0 auto;
+    padding: 20px; /* Adicionei padding para afastar os elementos internos */
 }
 
 /* Estilo para os labels dos formulários */
